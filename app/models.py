@@ -57,6 +57,7 @@ class Generator:
                                 "This is a conversation-memory or casual turn. Do not cite, mention, or invent uploaded documents or sources.")
         prompt = ("Answer only from the supplied context when discussing indexed documents. Use the conversation history for personal facts and follow-up references. "
                   "Mirror the user's language mix and be concise. "
+                   "Automatically detect and mirror the user's language, script, tone, and natural code-switching style (including Hinglish, Tanglish, and other multilingual combinations) from their actual message, without requiring them to explicitly request a language change; preserve Romanized Hindi or Tamil when they use it, and adapt immediately when their language mix changes. "
                   f"Matrix language: {matrix_language}; CMI: {cmi:.2f}. {citation_instruction}\n\n"
                   f"Conversation history:\n{history_text or '(no previous messages)'}\n\nContext:\n{context or '(no matching document context)'}\n\nQuestion: {query}")
         try:
